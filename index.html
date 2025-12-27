@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkUp - Connect. Share. Inspire.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1><i class="fas fa-link"></i> LinkUp</h1>
+            </div>
+            <div class="nav-search">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search LinkUp..." id="searchInput">
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-btn" id="homeBtn">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </button>
+                <button class="nav-btn" id="exploreBtn">
+                    <i class="fas fa-compass"></i>
+                    <span>Explore</span>
+                </button>
+                <button class="nav-btn" id="notificationsBtn">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="nav-btn" id="messagesBtn">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </button>
+                <button class="nav-btn" id="profileBtn">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <div class="profile-avatar">
+                    <img src="https://source.unsplash.com/300x300/?indian,cricketer,portrait&sig=201" alt="Profile">
+                </div>
+                <div class="profile-info">
+                    <h3>Arjun Sharma</h3>
+                    <p>@arjunsharma</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">1.2K</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5.8K</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">234</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trending-section">
+                <h4>Trending</h4>
+                <div class="trending-item">
+                    <span class="trending-tag">#TechNews</span>
+                    <span class="trending-count">12.5K posts</span>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-tag">#WebDev</span>
+                    <span class="trending-count">8.9K posts</span>
+                </div>
+                <div class="trending-item">
+                    <span class="trending-tag">#JavaScript</span>
+                    <span class="trending-count">15.2K posts</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Feed Section (Home View) -->
+        <section class="feed-section view-section" id="homeView">
+            <!-- Create Post -->
+            <div class="create-post">
+                <div class="post-creator">
+                    <img src="https://source.unsplash.com/100x100/?indian,cricketer,portrait&sig=202" alt="Your avatar" class="creator-avatar">
+                    <div class="post-input">
+                        <textarea placeholder="What's happening?" id="postText"></textarea>
+                        <div class="post-actions">
+                            <button class="action-btn" id="addImageBtn">
+                                <i class="fas fa-image"></i>
+                            </button>
+                            <button class="action-btn" id="addEmojiBtn">
+                                <i class="far fa-smile"></i>
+                            </button>
+                            <button class="action-btn" id="addLocationBtn">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </button>
+                            <button class="post-btn" id="publishBtn">Post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Feed -->
+            <div class="posts-feed" id="postsFeed">
+                <!-- Posts will be dynamically generated here -->
+            </div>
+        </section>
+
+        <!-- Explore View -->
+        <section class="view-section" id="exploreView" style="display: none;">
+            <!-- Trending Topics -->
+            <div class="post-card">
+                <div class="post-header">
+                    <i class="fas fa-fire" style="color: var(--accent-color);"></i>
+                    <div class="post-user-info">
+                        <h4>Trending Topics</h4>
+                        <p>What's popular right now</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="trending-tags">
+                        <div class="trending-tag-item">
+                            <span class="trending-tag">#TechIndia</span>
+                            <span class="trending-count">45.2K posts</span>
+                        </div>
+                        <div class="trending-tag-item">
+                            <span class="trending-tag">#StartupIndia</span>
+                            <span class="trending-count">32.8K posts</span>
+                        </div>
+                        <div class="trending-tag-item">
+                            <span class="trending-tag">#DigitalIndia</span>
+                            <span class="trending-count">28.5K posts</span>
+                        </div>
+                        <div class="trending-tag-item">
+                            <span class="trending-tag">#WebDev</span>
+                            <span class="trending-count">15.7K posts</span>
+                        </div>
+                        <div class="trending-tag-item">
+                            <span class="trending-tag">#JavaScript</span>
+                            <span class="trending-count">12.3K posts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Users -->
+            <div class="post-card">
+                <div class="post-header">
+                    <i class="fas fa-star" style="color: var(--accent-color);"></i>
+                    <div class="post-user-info">
+                        <h4>Featured Users</h4>
+                        <p>Discover amazing people</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="featured-users">
+                        <div class="featured-user">
+                    <img src="https://source.unsplash.com/120x120/?cricket,player,india&sig=211" alt="User" class="featured-avatar">
+                            <div class="featured-info">
+                                <h5>Dr. Ananya Gupta</h5>
+                                <p>@ananyagupta</p>
+                                <span class="featured-bio">AI Researcher | Tech Speaker | 2.5M followers</span>
+                            </div>
+                            <button class="follow-btn">Follow</button>
+                        </div>
+                        <div class="featured-user">
+                    <img src="https://source.unsplash.com/120x120/?indian,cricketer,portrait&sig=212" alt="User" class="featured-avatar">
+                            <div class="featured-info">
+                                <h5>Rohit Verma</h5>
+                                <p>@rohitverma</p>
+                                <span class="featured-bio">Full Stack Developer | Open Source Contributor</span>
+                            </div>
+                            <button class="follow-btn">Follow</button>
+                        </div>
+                        <div class="featured-user">
+                    <img src="https://source.unsplash.com/120x120/?india,cricket,portrait&sig=213" alt="User" class="featured-avatar">
+                            <div class="featured-info">
+                                <h5>Neha Agarwal</h5>
+                                <p>@nehaagarwal</p>
+                                <span class="featured-bio">UI/UX Designer | Design Mentor | 1.8M followers</span>
+                            </div>
+                            <button class="follow-btn">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Posts -->
+            <div class="post-card">
+                <div class="post-header">
+                    <i class="fas fa-chart-line" style="color: var(--accent-color);"></i>
+                    <div class="post-user-info">
+                        <h4>Popular Posts</h4>
+                        <p>Most engaging content today</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="popular-posts">
+                        <div class="popular-post">
+                            <div class="popular-post-header">
+                                <img src="https://source.unsplash.com/80x80/?indian,cricket,batsman&sig=221" alt="User" class="popular-avatar">
+                                <div class="popular-user-info">
+                                    <h6>Vikram Singh</h6>
+                                    <p>@vikramsingh</p>
+                                </div>
+                                <span class="popular-stats">🔥 15.2K likes</span>
+                            </div>
+                            <p class="popular-content">"Just launched my startup in the fintech space! Excited to revolutionize digital payments in India. #StartupIndia #Fintech"</p>
+                        </div>
+                        <div class="popular-post">
+                            <div class="popular-post-header">
+                                <img src="https://source.unsplash.com/80x80/?indian,cricket,team&sig=222" alt="User" class="popular-avatar">
+                                <div class="popular-user-info">
+                                    <h6>Deepika Sharma</h6>
+                                    <p>@deepikasharma</p>
+                                </div>
+                                <span class="popular-stats">🔥 12.8K likes</span>
+                            </div>
+                            <p class="popular-content">"Amazing tech conference in Bangalore today! The future of AI in India looks incredibly bright. #AI #TechIndia"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Events & Meetups -->
+            <div class="post-card">
+                <div class="post-header">
+                    <i class="fas fa-calendar-alt" style="color: var(--accent-color);"></i>
+                    <div class="post-user-info">
+                        <h4>Upcoming Events</h4>
+                        <p>Tech meetups and conferences</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">15</span>
+                                <span class="event-month">Dec</span>
+                            </div>
+                            <div class="event-details">
+                                <h6>React India 2024</h6>
+                                <p>Bangalore • Free</p>
+                                <span class="event-attendees">2.5K attending</span>
+                            </div>
+                            <button class="event-btn">Join</button>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="event-day">22</span>
+                                <span class="event-month">Dec</span>
+                            </div>
+                            <div class="event-details">
+                                <h6>AI & ML Summit</h6>
+                                <p>Mumbai • ₹500</p>
+                                <span class="event-attendees">1.8K attending</span>
+                            </div>
+                            <button class="event-btn">Join</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notifications View -->
+        <section class="view-section" id="notificationsView" style="display: none;">
+            <div class="post-card">
+                <div class="post-header">
+                    <i class="fas fa-bell" style="color: var(--accent-color);"></i>
+                    <div class="post-user-info">
+                        <h4>Notifications</h4>
+                        <p>Your recent activity and alerts</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">You have <strong>3</strong> new notifications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages View -->
+        <section class="view-section" id="messagesView" style="display: none;">
+            <div class="post-card">
+                <div class="post-header">
+                    <i class="fas fa-envelope" style="color: var(--accent-color);"></i>
+                    <div class="post-user-info">
+                        <h4>Messages</h4>
+                        <p>Start a new conversation</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">Your inbox is empty. Say hello to someone new!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile View -->
+        <section class="view-section" id="profileView" style="display: none;">
+            <div class="post-card">
+                <div class="post-header">
+                    <img src="https://source.unsplash.com/100x100/?india,cricketer,portrait&sig=223" alt="Profile" class="post-avatar">
+                    <div class="post-user-info">
+                        <h4>John Doe</h4>
+                        <p>@johndoe</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p class="post-text">Welcome to your profile. Your posts, followers, and more will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <div class="suggestions-section">
+                <h4>Who to follow</h4>
+                <div class="suggestion-item">
+                    <img src="https://source.unsplash.com/100x100/?indian,cricketer,portrait&sig=231" alt="User">
+                    <div class="suggestion-info">
+                        <h5>Priya Patel</h5>
+                        <p>@priyapatel</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggestion-item">
+                    <img src="https://source.unsplash.com/100x100/?india,cricket,portrait&sig=232" alt="User">
+                    <div class="suggestion-info">
+                        <h5>Rajesh Kumar</h5>
+                        <p>@rajeshkumar</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+                <div class="suggestion-item">
+                    <img src="https://source.unsplash.com/100x100/?cricket,india,portrait&sig=233" alt="User">
+                    <div class="suggestion-info">
+                        <h5>Kavya Singh</h5>
+                        <p>@kavyasingh</p>
+                    </div>
+                    <button class="follow-btn">Follow</button>
+                </div>
+            </div>
+
+            <div class="news-section">
+                <h4>What's happening</h4>
+                <div class="news-item">
+                    <h5>Tech Conference 2024</h5>
+                    <p>Join us for the biggest tech conference of the year</p>
+                    <span class="news-time">2 hours ago</span>
+                </div>
+                <div class="news-item">
+                    <h5>New JavaScript Framework</h5>
+                    <p>Revolutionary framework promises better performance</p>
+                    <span class="news-time">4 hours ago</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Modal for Image Preview -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Post image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
